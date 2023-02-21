@@ -1,0 +1,13 @@
+<h1>My blog</h1>
+
+<ul>
+  {% for post in posts %}
+  <li>
+    <div> {{post.title }}</div>
+    <div> {{post.createDate }}</div>
+    <div> {{post.text|truncatechars:10 }}
+    </div>
+    <a href="{% url 'detail' post.id %}">Show all</a>
+  </li>
+  {% endfor %}
+</ul>
